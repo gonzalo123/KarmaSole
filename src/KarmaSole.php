@@ -1,6 +1,6 @@
 <?php
 
-class Karmacracy
+class KarmaSole
 {
     private $proxy;
 
@@ -13,4 +13,6 @@ class Karmacracy
     {
         return $this->proxy->shortUrl($url);
     }
+
+
 }
