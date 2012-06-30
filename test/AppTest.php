@@ -1,5 +1,4 @@
 <?php
-
 include(__DIR__ . '/../src/Karmacracy.php');
 include(__DIR__ . '/../src/KarmacracyApiProxy.php');
 
@@ -12,5 +11,4 @@ class AppTest extends PHPUnit_Framework_TestCase
         $result = $kcy->short("http://programania.net");
         $this->assertEquals("http://kcy.me/9iic", $result);
     }
-
 }
