@@ -1,11 +1,16 @@
 <?php
+
+include(__DIR__ . '/../src/Karmacracy.php');
+
+
 class AppTest extends PHPUnit_Framework_TestCase
 {
 
     public function test_de_prueba()
     {
-
-        $this->assertEquals(1, 2);
+        $kcy = new Karmacracy();
+        $result = $kcy->short("http://google.com");
+        $this->assertEquals("http://www.google.com", $result);
     }
 
 }
