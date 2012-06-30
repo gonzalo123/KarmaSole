@@ -15,8 +15,6 @@ class KarmacracyApiProxy
 
     public function shortUrl($url)
     {
-        $url = $this->host;
-
         $queryString = array(
             'u' => $this->user,
             'key' => $this->key,
@@ -24,7 +22,7 @@ class KarmacracyApiProxy
             'format' => 'json'
         );
 
-        $data = $this->get($url, $queryString);
+        $data = $this->get($this->host, $queryString);
         return $data['data']['url'];
     }
 
@@ -32,7 +30,6 @@ class KarmacracyApiProxy
     {
         $s = curl_init();
         curl_setopt($s, CURLOPT_URL, $url . '?' . http_build_query($queryString));
-
         curl_setopt($s, CURLOPT_RETURNTRANSFER, true);
         $out = curl_exec($s);
         $status = curl_getinfo($s, CURLINFO_HTTP_CODE);
