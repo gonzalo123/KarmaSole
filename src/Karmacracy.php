@@ -2,8 +2,15 @@
 
 class Karmacracy
 {
+    private $proxy;
+
+    public function __construct(KarmacracyApiProxy $proxy)
+    {
+        $this->proxy = $proxy;
+    }
+
     function short($url)
     {
-        echo $url;
+        return $this->proxy->shortUrl($url);
     }
 }
