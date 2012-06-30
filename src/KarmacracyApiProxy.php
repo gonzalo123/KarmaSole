@@ -7,9 +7,10 @@ class KarmacracyApiProxy
 
     const HTTP_OK = 200;
 
-    public function __construct($key)
+    public function __construct($key, $user)
     {
         $this->key = $key;
+        $this->user = $user;
     }
 
     public function shortUrl($url)
@@ -17,14 +18,13 @@ class KarmacracyApiProxy
         $url = $this->host;
 
         $queryString = array(
-            'u' => 'gonzalo123',
+            'u' => $this->user,
             'key' => $this->key,
-            'url' => 'http://www.programania.net',
+            'url' => $url,
             'format' => 'json'
         );
 
         $data = $this->get($url, $queryString);
-
         return $data['data']['url'];
     }
 

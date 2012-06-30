@@ -10,9 +10,9 @@ class AppTest extends PHPUnit_Framework_TestCase
     {
 
         $conf = include(__DIR__ . '/../conf/config.php');
-        $kcy = new Karmacracy(new KarmacracyApiProxy($conf['short_key']));
-        $result = $kcy->short("http://google.com");
-        $this->assertEquals("http://kcy.me/9ihr", $result);
+        $kcy = new Karmacracy(new KarmacracyApiProxy($conf['short_key'],'gonzalo123'));
+        $result = $kcy->short("http://programania.net");
+        $this->assertEquals("http://kcy.me/9ii2", $result);
     }
 
 }
