@@ -2,6 +2,7 @@
 
 include(__DIR__ . '/../src/KarmaSole.php');
 include(__DIR__ . '/../src/KcyProxy.php');
+include(__DIR__ . '/../src/CurlClient.php');
 include(__DIR__ . '/../src/KarmacracyProxy.php');
 
 $handle = fopen('php://stdin', 'r');
