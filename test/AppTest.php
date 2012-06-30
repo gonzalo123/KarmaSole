@@ -5,52 +5,24 @@ include(__DIR__ . '/../src/KarmacracyProxy.php');
 
 class AppTest extends PHPUnit_Framework_TestCase
 {
-    public function test_de_prueba()
+    public function test_karmasole_obtiene_toda_la_info_de_un_link_compartido()
     {
         $conf = include(__DIR__ . '/../conf/config.php');
         $kcy = new KarmaSole(new KcyProxy($conf['short_key'], $conf['short_user']));
-        $result = $kcy->short("http://programania.net");
-        $this->assertEquals("http://kcy.me/9iic", $result);
+        $info = $kcy->short("http://programania.net");
+
+        $this->assertTrue(count($info['humans']) > 0);
+        $this->assertTrue(isset($info['mykclicks']));
+        $this->assertTrue(isset($info['mykcytype']));
     }
 
-    public function test_de_prueba2()
+    public function test_karmacracy_proxy_retorna_info()
     {
-       $proxy = new KarmacracyProxy('katayuno');
+        $proxy = new KarmacracyProxy('katayuno');
         $info = $proxy->info("http://kcy.me/9iic");
 
-        //var_dump($info);
-
         $this->assertTrue(count($info['kcy']['kcyedhumans']) > 0);
-
-
-        /*
-         *
-         *   array(1) {
-               ["human"]=>
-               array(1) {
-                 [0]=>
-                 array(3) {
-                   ["username"]=>
-                   string(10) "gonzalo123"
-                   ["img"]=>
-                   string(65) "http://gravatar.com/avatar/6aa6fe484173856751a24135b4dd4586/?s=80"
-                   ["kcyrank"]=>
-                   string(3) "126"
-                 }
-               }
-             }
-             ["kclicks"]=>
-             NULL
-             ["mykclicks"]=>
-             string(1) "0"
-             ["mykcytype"]=>
-             string(1) "2"
-             ["traffic"]=>
-             array(3) {
-               ["kcyverse"]=>
-               array(1) {
-                 ["referer"]=>
-                 array(0) {
-         */
+        $this->assertTrue(isset($info['kcy']['mykclicks']));
+        $this->assertTrue(isset($info['kcy']['mykcytype']));
     }
 }
