@@ -11,6 +11,7 @@ class KcyProxy
     {
         $this->key = $key;
         $this->user = $user;
+        $this->curlClient = new CurlClient();
     }
 
     public function shortUrl($url)
@@ -22,22 +23,7 @@ class KcyProxy
             'format' => 'json'
         );
 
-        $data = $this->get($this->host, $queryString);
+        $data = $this->curlClient->get($this->host, $queryString);
         return $data['data']['url'];
-    }
-
-    private function get($url, $queryString)
-    {
-        $s = curl_init();
-        curl_setopt($s, CURLOPT_URL, $url . '?' . http_build_query($queryString));
-        curl_setopt($s, CURLOPT_RETURNTRANSFER, true);
-        $out = curl_exec($s);
-        $status = curl_getinfo($s, CURLINFO_HTTP_CODE);
-        curl_close($s);
-
-        if ($status != self::HTTP_OK) {
-            throw new \Exception("http error: {$status}", $status);
-        }
-        return json_decode($out, true);
     }
 }

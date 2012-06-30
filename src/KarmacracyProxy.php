@@ -15,10 +15,8 @@ class KarmacracyProxy
         $queryString = array(
             'appkey' => $this->key
         );
-
-        $kcy = str_replace('http://kcy.me/', '', $kcy);
-
-        $data = $this->curlClient->get($this->host . "kcy/$kcy/", $queryString);
+        $cleanKcy = str_replace('http://kcy.me/', '', $kcy);
+        $data = $this->curlClient->get($this->host . "kcy/$cleanKcy/", $queryString);
         return $data['data'];
     }
 }

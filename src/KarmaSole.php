@@ -3,27 +3,22 @@
 class KarmaSole
 {
     private $proxy;
+    private $kProxy;
 
-    public function __construct(KcyProxy $proxy)
+    public function __construct($kcyKey,$kcyUser,$karmaKey)
     {
-        $this->proxy = $proxy;
+        $this->proxy = new KcyProxy($kcyKey, $kcyUser);
+        $this->kProxy = new KarmacracyProxy($karmaKey);
     }
 
     function short($url)
     {
         $kcy = $this->proxy->shortUrl($url);
-        list($info, $humanTxts) = $this->getInfoOfKcy($kcy);
+        $info = $this->kProxy->info($kcy);
+        $humanTxts = $this->normalizeHumanInformation($info);
         return array(
             "mykcytype" => $info['kcy']['mykcytype'], "mykclicks" => $info['kcy']['mykclicks'], "humans" => $humanTxts
         );
-    }
-
-    private function getInfoOfKcy($kcy)
-    {
-        $proxy = new KarmacracyProxy('katayuno');
-        $info = $proxy->info($kcy);
-        $humanTxts = $this->normalizeHumanInformation($info);
-        return array($info, $humanTxts);
     }
 
     private function normalizeHumanInformation($info)

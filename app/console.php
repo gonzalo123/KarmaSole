@@ -8,8 +8,7 @@ include(__DIR__ . '/../src/KarmacracyProxy.php');
 $handle = fopen('php://stdin', 'r');
 $count = 0;
 $conf = include(__DIR__ . '/../conf/config.php');
-$kcy = new KarmaSole(new KcyProxy($conf['short_key'], $conf['short_user']));
-
+$kcy = new KarmaSole($conf['short_key'], $conf['short_user'],$conf['karma_key']);
 
 function printter($buffer, $result){
     $text =  "\n";

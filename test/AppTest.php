@@ -9,7 +9,7 @@ class AppTest extends PHPUnit_Framework_TestCase
     public function test_karmasole_obtiene_toda_la_info_de_un_link_compartido()
     {
         $conf = include(__DIR__ . '/../conf/config.php');
-        $kcy = new KarmaSole(new KcyProxy($conf['short_key'], $conf['short_user']));
+        $kcy = new KarmaSole($conf['short_key'], $conf['short_user'],$conf['karma_key']);
         $info = $kcy->short("http://programania.net");
 
         $this->assertTrue(count($info['humans']) > 0);
