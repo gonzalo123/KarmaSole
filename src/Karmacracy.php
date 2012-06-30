@@ -4,7 +4,7 @@ class Karmacracy
 {
     private $proxy;
 
-    public function __construct(KarmacracyApiProxy $proxy)
+    public function __construct(KcyProxy $proxy)
     {
         $this->proxy = $proxy;
     }

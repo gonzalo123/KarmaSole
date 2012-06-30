@@ -1,6 +1,6 @@
 <?php
 
-class KarmacracyApiProxy
+class KcyProxy
 {
     private $host = 'http://kcy.me/api/';
     private $key;
