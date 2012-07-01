@@ -9,6 +9,7 @@ KarmaSole
  * Composer
 
 * Usando el script pasándole como parámetro la url
+
 ```
 gonzalo@gnzl:~/$ app/console.php karmaSole:acorta www.katayunos.com
 Acortando: www.katayunos.com ...
