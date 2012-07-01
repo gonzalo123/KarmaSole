@@ -1,1 +1,6 @@
-config.php
+conf/config.php
+vendor/.composer/*
+vendor/composer/*
+vendor/pimple/*
+vendor/symfony/*
+vendor/autoload.php
