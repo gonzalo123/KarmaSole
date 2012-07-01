@@ -1,8 +1,6 @@
 <?php
 namespace KarmaSole;
 
-use KarmaSole\Proxy;
-
 class Console
 {
     private $proxy;

@@ -1,12 +1,10 @@
 <?php
 namespace KarmaSole\Proxy;
 
-use KarmaSole\Curl;
-
 class Kcy
 {
     private $host = 'http://kcy.me/api/';
-    private $key, $user;
+    private $key, $user, $curlClient;
 
     const HTTP_OK = 200;
 

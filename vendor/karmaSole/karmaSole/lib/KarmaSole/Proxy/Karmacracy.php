@@ -1,8 +1,6 @@
 <?php
 namespace KarmaSole\Proxy;
 
-use KarmaSole\Curl;
-
 class Karmacracy
 {
     private $host = 'http://karmacracy.com/api/v1/';
