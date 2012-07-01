@@ -15,7 +15,6 @@ Acortando: www.katayunos.com ...
 shorturl: http://kcy.me/9ikf
 mykcytype: 2
 mykclicks: 0
-
 Personas que han compartido este enlace:
   Usuario: ice. kcyrank: 110
   Usuario: ggalmazor. kcyrank: 149
@@ -32,7 +31,6 @@ Acortando: www.katayunos.com ...
 shorturl: http://kcy.me/9ikf
 mykcytype: 2
 mykclicks: 0
-
 Personas que han compartido este enlace:
   Usuario: ice. kcyrank: 110
   Usuario: ggalmazor. kcyrank: 149
