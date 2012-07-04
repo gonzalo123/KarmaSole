@@ -2,7 +2,8 @@ KarmaSole
 ========
 
 * Cliente de consola que consume la API de Karmacracy
-* Desarrollado en el mini hackaton en www.katayunos.com junto con la gente de http://karmacracy.com/
+* Desarrollado en el mini hackaton en www.katayunos.com junto con la gente de http://karmacracy.com/ 
+* Equipo: @artolamola, @epatxi y @gonzalo123
 * dependencias:
  * Symfony\Console
  * Pimple
